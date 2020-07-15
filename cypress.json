@@ -1,0 +1,5 @@
+{
+  "baseUrl": "https://www.imdb.com",
+  "integrationFolder": "__test__",
+  "firefoxGcInterval": null
+}

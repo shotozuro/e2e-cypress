@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "cy:firefox": "cypress run --browser firefox --headless",
+    "cy:chrome": "cypress run --browser chrome",
+    "cy:electron": "cypress run --browser electron",
+    "cy:chromium": "cypress run --browser chromium",
+    "cy:edge": "cypress run --browser edge",
+    "cy:open": "cypress open"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "cypress": "^4.10.0"
+  }
+}
