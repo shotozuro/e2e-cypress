@@ -7,7 +7,10 @@
     "cy:edge": "cypress run --browser edge",
     "cy:open": "cypress open"
   },
-  "dependencies": {},
+  "dependencies": {
+    "cypress-plugin-snapshots": "^1.4.3",
+    "js-base64": "2.5.2"
+  },
   "devDependencies": {
     "cypress": "^4.10.0"
   }

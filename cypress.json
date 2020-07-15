@@ -1,5 +1,10 @@
 {
   "baseUrl": "https://www.imdb.com",
   "integrationFolder": "__test__",
-  "firefoxGcInterval": null
+  "firefoxGcInterval": null,
+  "video": false,
+  "screenshot": false,
+  "ignoreTestFiles": ["**/__snapshots__/*", "**/__image_snapshots__/*"],
+  "viewportWidth": 1440,
+  "viewportHeight": 900
 }
