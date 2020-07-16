@@ -8,10 +8,6 @@ const sizes = [
 ];
 
 describe('Home page visual regression testing', () => {
-  before(() => {
-    cy.visit('/');
-  });
-
   sizes.forEach((size) => {
     const device =
       size[0] < 1024 ? (size[0] < 768 ? 'mobile' : 'tablet') : 'desktop';
@@ -20,7 +16,8 @@ describe('Home page visual regression testing', () => {
       beforeEach(() => {
         fixCypressSpec(__filename);
         cy.viewport(...size);
-        cy.wait(1000);
+        cy.wait(500);
+        cy.visit('/');
       });
 
       it(`match with header snapshot`, () => {
