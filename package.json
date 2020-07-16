@@ -1,4 +1,15 @@
 {
+  "name": "e2e-cypress",
+  "version": "1.0.0",
+  "description": "End to end testing implementation using Cypress",
+  "main": "index.js",
+  "keywords": [
+    "cypress",
+    "end-to-end",
+    "testing"
+  ],
+  "author": "Nur Shalahuddin F.",
+  "license": "ISC",
   "scripts": {
     "cy:firefox": "cypress run --browser firefox --headless",
     "cy:chrome": "cypress run --browser chrome --headless",
@@ -13,7 +24,6 @@
     "test:responsiveness:firefox": "yarn cy:firefox --spec __test__/responsiveness.spec.js",
     "test:responsiveness:chrome": "yarn cy:chrome --spec __test__/responsiveness.spec.js",
     "test:responsiveness:electron": "yarn cy:electron --spec __test__/responsiveness.spec.js"
-
   },
   "dependencies": {
     "cypress-plugin-snapshots": "^1.4.3",
