@@ -1,11 +1,19 @@
 {
   "scripts": {
     "cy:firefox": "cypress run --browser firefox --headless",
-    "cy:chrome": "cypress run --browser chrome",
+    "cy:chrome": "cypress run --browser chrome --headless",
     "cy:electron": "cypress run --browser electron",
-    "cy:chromium": "cypress run --browser chromium",
-    "cy:edge": "cypress run --browser edge",
-    "cy:open": "cypress open"
+    "cy:open": "cypress open",
+    "test:visual:firefox": "yarn cy:firefox --spec __test__/visual_regression.spec.js",
+    "test:visual:chrome": "yarn cy:chrome --spec __test__/visual_regression.spec.js",
+    "test:visual:electron": "yarn cy:electron --spec __test__/visual_regression.spec.js",
+    "test:performance:firefox": "yarn cy:firefox --spec __test__/performance.spec.js",
+    "test:performance:chrome": "yarn cy:chrome --spec __test__/performance.spec.js",
+    "test:performance:electron": "yarn cy:electron --spec __test__/performance.spec.js",
+    "test:responsiveness:firefox": "yarn cy:firefox --spec __test__/responsiveness.spec.js",
+    "test:responsiveness:chrome": "yarn cy:chrome --spec __test__/responsiveness.spec.js",
+    "test:responsiveness:electron": "yarn cy:electron --spec __test__/responsiveness.spec.js"
+
   },
   "dependencies": {
     "cypress-plugin-snapshots": "^1.4.3",
