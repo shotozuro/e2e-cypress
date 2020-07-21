@@ -55,7 +55,7 @@ describe('Home page visual regression testing', () => {
       it(`match with search bar form snapshot`, () => {
         if (device === 'mobile') {
           cy.get('#imdbHeader-searchOpen').click();
-          cy.wait(1000);
+          cy.wait(2000);
         }
 
         cy.get('#suggestion-search-container')
