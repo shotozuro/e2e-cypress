@@ -6,6 +6,7 @@ const sizes = [
   [768, 1024],
   [1440, 900],
 ];
+const browser = Cypress.browser.name;
 
 describe('Home page visual regression testing', () => {
   sizes.forEach((size) => {
@@ -24,8 +25,8 @@ describe('Home page visual regression testing', () => {
         cy.get('#imdbHeader')
           .should('be.visible')
           .wait(200)
-          .toMatchSnapshot({
-            name: `header-${size[0]}`,
+          .toMatchImageSnapshot({
+            name: `header-${size[0]}-${browser}`,
             threshold: 0.01,
           });
       });
@@ -42,7 +43,7 @@ describe('Home page visual regression testing', () => {
         }
         cy.wait(200);
         cy.get('[data-testid="panel"]').toMatchImageSnapshot({
-          name: `drawer-${size}`,
+          name: `drawer-${size}-${browser}`,
           threshold: 0.02,
         });
 
@@ -59,8 +60,9 @@ describe('Home page visual regression testing', () => {
 
         cy.get('#suggestion-search-container')
           .scrollIntoView()
-          .toMatchSnapshot({
-            name: `search-form-${size}`,
+          .toMatchImageSnapshot({
+            name: `search-form-${size}-${browser}`,
+            threshold: 0.03,
           });
 
         if (device === 'mobile') {
@@ -87,16 +89,18 @@ describe('Login page visual regression testing', () => {
       it(`match with signin-options snapshot`, () => {
         cy.get('#signin-options')
           .should('be.visible')
-          .toMatchSnapshot({
-            name: `signin-option-${size[0]}`,
+          .toMatchImageSnapshot({
+            name: `signin-option-${size[0]}-${browser}`,
+            threshold: 0.03,
           });
       });
 
       it(`match with benefit snapshot`, () => {
         cy.get('#signin-perks')
           .should('be.visible')
-          .toMatchSnapshot({
-            name: `signin-perks-${size[0]}`,
+          .toMatchImageSnapshot({
+            name: `signin-perks-${size[0]}-${browser}`,
+            threshold: 0.03,
           });
       });
     });
